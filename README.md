@@ -39,7 +39,7 @@ Some parts of the code and datasets in this project are adapted from the followi
 2. **[PAD Repository](https://github.com/NUS-HPC-AI-Lab/PAD)**  
    The Prioritize Alignment in Dataset Distillation (PAD) method and its implementation are adapted from the PAD repository. This method was integrated into the project to improve dataset distillation performance.
 
-and the following files are taking from the ECE1512 course materials
+and the following files are taken from the ECE1512 course materials:
 1. `networks.ipynb`
 2. `utils.ipynb`
 3. `MHIST Dataset`
