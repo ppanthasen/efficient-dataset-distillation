@@ -1,6 +1,6 @@
 # ECE1512_2024F_ProjectA_Pas_Panthasen
 
-This repository contains the code for **Project A**, which involves running the Jupyter Notebook `projectA.ipynb`.
+This repository contains the code for **Project A**, which involves running the Jupyter Notebook `projectA.ipynb` in the subdirectory `ProjectA`.
 
 ## Installation Instructions
 
