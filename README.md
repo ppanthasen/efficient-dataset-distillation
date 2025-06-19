@@ -1,6 +1,6 @@
 # Dataset Distillation for Efficient ML Training (DataDAM & PAD)
 
-This repository implements a standalone dataset distillation pipeline using two state-of-the-art methods:  
+This repository implements a dataset distillation pipeline using two state-of-the-art methods:  
 - **DataDAM** (Dataset Distillation with Attention Matching)
 - **PAD** (Prioritizing Alignment in Dataset Distillation)
   
@@ -12,9 +12,8 @@ The project was developed as an independent submission for ECE1512 at the Univer
 Dataset distillation aims to generate a compact synthetic dataset that enables deep learning models to generalize as effectively as if trained on the full dataset. This implementation explores:
 
 - **DataDAM**: Enhances dataset distillation by aligning attention maps between synthetic and real samples, ensuring the distilled data preserves how the model internally focuses on different input regions.
-- **PAD**: Prioritizes important trajectories and filters redundant samples to improve efficiency
-
-
+- **PAD**: Improves distillation efficiency by prioritizing alignment of important training trajectories and filtering redundant samples
+  
 ## 💡 Key Results
 
 - Reduced dataset size by **98.6%**
@@ -34,10 +33,10 @@ Dataset distillation aims to generate a compact synthetic dataset that enables d
 ## 🛠️ Run Locally
 
 ```bash
-git clone https://github.com/ppanthasen/YOUR_REPO_NAME.git
-cd ProjectA
+git clone https://github.com/ppanthasen/efficient-dataset-distillation.git
+cd efficient-dataset-distillation
 pip install torch numpy matplotlib pandas scikit-learn Pillow thop tqdm
-jupyter notebook projectA.ipynb
+jupyter notebook main.ipynb
 ```
 
 ## 📈 Sample Results
@@ -50,7 +49,7 @@ jupyter notebook projectA.ipynb
 </p>
 
 
-> Visualization of MNIST synthetic images generated from noise initialization. Each row shows a digit class; columns depict progression from noise to optimized samples over 100 epochs. Despite aggressive compression (e.g., 10–100 images per class), the distilled data successfully captures class structure and identity.*
+> *Visualization of MNIST synthetic images generated from noise initialization. Each row shows a digit class; columns depict progression from noise to optimized samples over 100 epochs. Despite aggressive compression (e.g., 10 from 6,000 images per class), the distilled data successfully captures class structure and identity.*
 
 
 ### 🔹 Continual Learning Performance
@@ -59,7 +58,7 @@ jupyter notebook projectA.ipynb
 </p>
 
 
-> Test accuracy across varying numbers of classes using different buffer sizes and image-per-class (IPC) settings. IPC100 with buffer 1000 achieves the highest robustness. IPC10 demonstrates that highly compressed synthetic datasets can still perform competitively in continual learning scenarios.*
+> *Test accuracy across varying numbers of classes under different memory constraints and image-per-class (IPC) settings. With a limited buffer size (e.g., 100), lower IPC values like IPC10 can outperform higher ones such as IPC100 due to better data efficiency.*
 
 
 ### 🔹 Training Time vs Accuracy
@@ -73,7 +72,7 @@ jupyter notebook projectA.ipynb
 |             | Syn (real-init)  | 20 / 100   | 57.1 / 66.2      | 13.8 / 67.7            |
 |             | Syn (noise-init) | 20 / 100   | 43.2 / 40.7      | 12.8 / 59.9            |
 
-> *Synthetic datasets reduce training time by up to 90%, while retaining strong accuracy, especially when initialized from real data. Results confirm the effectiveness of distilled data in fast, low-resource training environments.*
+> *Synthetic datasets reduce training time by up to 70%, while retaining strong accuracy, especially when initialized from real data. Results confirm the effectiveness of distilled data in fast, low-resource training environments.*
 
 
 ### 🔹 Generalization Across Architectures
@@ -102,5 +101,5 @@ Some parts of this project were adapted from existing public and instructional s
 
 ## 📘 License
 
-This project is provided for academic and portfolio use only.
+This project is intended for academic and personal portfolio use only.
 
